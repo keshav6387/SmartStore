@@ -2,6 +2,7 @@ const express=require("express")
 const dotenv=require("dotenv")
 const path = require("path")
 const productRoutes=require("./routes/productRoutes")
+const userRoutes=require("./routes/userRoutes")
 const databaseConnect = require("./config/db")
 const ErrorMiddleware=require("./middleware/error")
 
@@ -21,6 +22,7 @@ app.use(express.json())
 
 
 app.use("/api/v1",productRoutes)
+app.use("/api/v1",userRoutes)
 
 app.use(ErrorMiddleware)
 
